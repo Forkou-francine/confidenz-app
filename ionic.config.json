@@ -1,0 +1,7 @@
+{
+  "name": "confidenz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
