@@ -1,17 +1,142 @@
-<ion-header [translucent]="true">
+
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-buttons slot="start" mode="ios" >
+      <ion-menu-button menu="main" >
+        <ion-icon name="menu"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons mode="ios" slot="end">
+      <ion-button slot="end" class="bordered" fill="solid" color="light">
+        <ion-icon  color="primary" name="notifications" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="assets/me.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <p>Welcome,</p>
+        <h3>Francine</h3>
+      </ion-label>
+    </ion-item>
+  
+  </ion-toolbar>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+ 
+<ion-content>
+    <div class="slides ion-margin-bottom">
+          <swiper-container [slidesPerView]="1.2" [loop]="true" >
+            <swiper-slide>
+              <ion-card>
+                <ion-card-header>
+                  <div class="main">
+                    <img src="assets/dropbox.png" alt="" srcset="">
+                  </div>
+                <div class="fil">
+                  <img class="files" src="/assets/doc.png" alt="" srcset="">
+                  <img class="files" src="/assets/xls (1).png" alt="" srcset="">
+                </div>
+                </ion-card-header>
+
+                <ion-card-content class="ion-text-left">
+                  <ion-card-title class="ion-margin-bottom" >Dropbox</ion-card-title>
+                  <ion-card-subtitle class="ion-text-right">12,52/25GB</ion-card-subtitle>
+                  <ion-progress-bar value="0.5" color="primary"></ion-progress-bar>
+                </ion-card-content>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card>
+                <ion-card-header>
+                  <div class="main">
+                    <img src="assets/gmail.png" alt="" srcset="">
+                  </div>
+                <div class="fil">
+                  <img class="files" src="/assets/doc.png" alt="" srcset="">
+                  <img class="files" src="/assets/xls (1).png" alt="" srcset="">
+                </div>
+                </ion-card-header>
+
+                <ion-card-content class="ion-text-left">
+                  <ion-card-title class="ion-margin-bottom" >Gmail</ion-card-title>
+                  <ion-card-subtitle class="ion-text-right">20/25GB</ion-card-subtitle>
+                  <ion-progress-bar value="0.85" color="success"></ion-progress-bar>
+                </ion-card-content>
+              </ion-card>
+            </swiper-slide>
+            <swiper-slide>
+              <ion-card  >
+                <ion-card-header>
+                  <div class="main">
+                    <img src="assets/google-drive.png" alt="" srcset="">
+                  </div>
+                <div class="fil">
+                  <img class="files" src="/assets/doc.png" alt="" srcset="">
+                  <img class="files" src="/assets/xls (1).png" alt="" srcset="">
+                </div>
+                </ion-card-header>
+
+                <ion-card-content class="ion-text-left">
+                  <ion-card-title class="ion-margin-bottom" >Drive</ion-card-title>
+                  <ion-card-subtitle class="ion-text-right">3/25GB</ion-card-subtitle>
+                  <ion-progress-bar value="0.15" color="warning"></ion-progress-bar>
+                </ion-card-content>
+              </ion-card>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+
+    <div class="container">
+      <h2>Recent Files</h2>
+
+      <ion-item lines="none" >
+        <ion-grid fixed>
+          <ion-row class="ion-align-items-center" >
+            <ion-col size="3">
+              <ion-button color="light" fill="clear" >
+                <ion-icon slot="icon-only" name="document"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="7">
+              <ion-label>
+                <h4> Confidenz.xls </h4>
+                <h6> Google Drive/Docs</h6>
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button color="light" fill="clear" >
+                <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item lines="none" >
+        <ion-grid >
+          <ion-row class="ion-align-items-center" >
+            <ion-col size="3">
+              <ion-button color="light" fill="clear" >
+                <ion-icon slot="icon-only" name="film"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="7">
+              <ion-label>
+                <h4> Salaires.xls </h4>
+                <h6> Google Drive/Docs</h6>
+              </ion-label>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button color="light" fill="clear" >
+                <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </div>
 </ion-content>
