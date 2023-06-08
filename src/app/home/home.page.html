@@ -1,11 +1,6 @@
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button  routerLink="/login" mode="ios">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button id="log" color="primary">
+      <ion-button id="log" color="primary" (click)="logout()">
         <ion-icon slot="start" name="log-out"></ion-icon> 
         Logout
       </ion-button>
@@ -20,15 +15,62 @@
   </div>
   <ion-label>
     <h2>
-      Confidenz est une application qui blablabla...
+      Confidenz est une application qui vous permet d'avoir accès à vos données de façon confidentielle et en toute sécurité.
     </h2>
   </ion-label>
   <ion-buttons >
     <ion-button (click)="onClick()">
-      <!-- <ion-icon slot="end" name="home"></ion-icon> -->
-     Accueil
+      <ion-icon slot="end" name="home"></ion-icon>
+     <ion-text >
+      <h4>Accueil</h4>
+     </ion-text>
     </ion-button>
   </ion-buttons>
+
+  <div>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="checkmark-done-circle-outline"></ion-icon>
+        <ion-label>Label</ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-checkbox [checked]="true" labelPlacement="end" justify="start">Packed at the Start of Line</ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-checkbox [checked]="true" labelPlacement="end" justify="start">Packed at the Start of Line</ion-checkbox>
+    </ion-item>
+
+    <ion-list mode="ios">
+      <ion-item>
+        <ion-icon slot="start" name="checkmark-done-circle-outline"></ion-icon>
+        <ion-label>Label</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+        <ion-label>Label</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+        <ion-label>Label</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="list">
+    <swiper-container [slidesPerView]="2.5" [loop]="true">
+      <swiper-slide>
+        <img src="/assets/xls (1).png" alt="" srcset="">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/assets/doc.png" alt="" srcset="">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/assets/doc.png" alt="" srcset="">
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/assets/xls (1).png" alt="" >
+      </swiper-slide>
+    </swiper-container>
+  </div>
 
 </ion-content>
 

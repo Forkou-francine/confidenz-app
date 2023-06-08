@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpService } from '../services/http.service';
+import { Users } from 'src/app/classes/users';
+
 
 @Component({
   selector: 'app-home',
@@ -8,8 +11,16 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor( private router: Router) { }
+  user?: Users | null;
 
+  constructor( private router: Router,
+            private http: HttpService) { 
+              this.http.user.subscribe( x=> this.user = x);
+            }
+          
+   logout(){
+    this.http.logout();
+  }
 
   onClick(){
     this.router.navigate(['/tabs/tab1'])
