@@ -1,4 +1,37 @@
 ion-toolbar, ion-footer, ion-item, ion-content {
     --background: #f1f5f8;
     padding: 0 10px;
+    
+    ion-searchbar{
+        font-family: rubik;
+     }
+}
+
+ion-content{
+    ion-list{
+        background: #f1f5f8;
+    }
+
+    .cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        ion-card{
+            width: 40%;
+            height: 25%;
+            box-shadow: none;
+            border-radius: 14px;
+        }
+
+        ion-img{
+            width: 85%;
+        }
+
+        h3{
+            font-size: 14px;
+            color: black;
+            font-family: rubik;
+        }
+    }
 }
