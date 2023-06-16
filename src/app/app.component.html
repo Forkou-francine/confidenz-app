@@ -6,39 +6,31 @@
       <div class="header-content">
         <img src="/assets/me.jpg" alt="" srcset="">
         <ion-label>
-          <h2>Francine Forkou</h2>
+          <h2>{{user?.firstName}} {{user?.lastName}}</h2>
           <p>Etudiante</p>
         </ion-label>
       </div>
-
+<!-- 
       <div class="action-button">
         <ion-button >
           <ion-icon slot="start" name="add"></ion-icon>
           User
         </ion-button>
-      </div>
+      </div> -->
 
       <ion-list class="menu-items" lines="none">
         <ion-item [routerLink]="['home']">
           <ion-icon name="home-outline" slot="start"></ion-icon>
           Accueil
         </ion-item>
-        <ion-item [routerLink]="['tab1']">
-          <ion-icon name="pie-chart-outline" slot="start"></ion-icon>
-          Dashboard
-        </ion-item>
-        <ion-item>
-          <ion-icon name="documents-outline" slot="start"></ion-icon>
-         Mes Documents
-        </ion-item>
         <ion-item class="active">
           <ion-icon name="arrow-up-outline" slot="start"></ion-icon>
          Upload
         </ion-item>
-        <ion-item>
+        <!-- <ion-item>
           <ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon>
          Messages
-        </ion-item>
+        </ion-item> -->
         <ion-item>
           <ion-icon name="exit-outline" slot="start"></ion-icon>
           <ion-label routerLink="/login" >Logout</ion-label>

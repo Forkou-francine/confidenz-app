@@ -11,11 +11,13 @@ import { Users } from 'src/app/classes/users';
 })
 export class HomePage implements OnInit {
 
-  user?: Users | null;
+  user : any;
+  initials! : String;
+  initalsetting:any;
 
   constructor( private router: Router,
             private http: HttpService) { 
-              this.http.user.subscribe( x=> this.user = x);
+           
             }
           
    logout(){

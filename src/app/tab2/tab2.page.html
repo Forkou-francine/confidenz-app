@@ -11,24 +11,12 @@
   </ion-toolbar>
 
 <ion-content>
-  <div class="cards">
+  <div *ngFor="let file of files" class="cards">
     <ion-card>
      <ion-card-content>
       <ion-img [src]="['/assets/document.png']"></ion-img>
-      <h3>Awesome Subtitle</h3>
+      <h3>{{file.name}}</h3>
      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <ion-img [src]="['/assets/document.png']"></ion-img>
-        <h3>Awesome Subtitle</h3>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <ion-img [src]="['/assets/document.png']"></ion-img>
-        <h3>Awesome Subtitle</h3>
-      </ion-card-content>
     </ion-card>
   </div>
 </ion-content>

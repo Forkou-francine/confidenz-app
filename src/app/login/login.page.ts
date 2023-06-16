@@ -16,6 +16,7 @@ export class LoginPage implements OnInit {
   connexionForm!: ConnexionForm;
   submitted =false;
   loading =false;
+  email!: string;
 
   userInfos: any;
   user: any;
@@ -43,21 +44,23 @@ export class LoginPage implements OnInit {
 
   get f(){ return this.validationFormUser.controls; }
 
-  onSubmit(){
+  onSubmit(email: string){
    this.submitted = true;
-   console.log(this.f);
-   console.log(this.f['email'].value); 
+   console.log(this.validationFormUser.value);
+   console.log(this.validationFormUser.value.email); 
 
   if (this.validationFormUser.invalid) {
      return;
    }
+   localStorage.setItem("user", JSON.stringify(this.user));
+
    this.loading= true;
    this.http.login(this.f['email'].value, this.f['password'].value)
    .pipe(first())
    .subscribe({
      next: () => {
        const retunUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
-       this.router.navigateByUrl(retunUrl);
+      this.router.navigate(['/home']);
        console.log(retunUrl);
        
      },
@@ -69,7 +72,7 @@ export class LoginPage implements OnInit {
   }
 
   goToHome(){
-    this.router.navigate(['home']);
+    this.router.navigate(['/home']);
   }
   
 }

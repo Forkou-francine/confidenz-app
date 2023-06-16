@@ -8,30 +8,36 @@ ion-toolbar, ion-footer, ion-item, ion-content {
 }
 
 ion-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
     ion-list{
         background: #f1f5f8;
     }
 
     .cards{
-        display: flex;
+        width: 45%;
+        height: 25%;
+        display: inline-flex;
         flex-direction: row;
-        justify-content: space-around;
-
+        margin-left: 9px;
         ion-card{
-            width: 40%;
-            height: 25%;
             box-shadow: none;
             border-radius: 14px;
         }
 
         ion-img{
-            width: 85%;
+            width: 60%;
+            margin: auto;
+            align-self: center;
         }
 
         h3{
             font-size: 14px;
             color: black;
             font-family: rubik;
+            text-align: center;
         }
     }
 }

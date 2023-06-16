@@ -5,24 +5,27 @@
     <img src="assets/confidenz6.png" alt="" >
   </div>
 
-  <form id="form" class="container-form" class="pt-3" [formGroup]="validationFormUser" (ngSubmit)="onSubmit()">
+  <form id="form" class="container-form" class="pt-3" [formGroup]="validationFormUser" (ngSubmit)="onSubmit(validationFormUser.value)">
     <div class="form-group"  >
       <ion-item class="ion-margin-bottom">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input  class="input" type="email" formControlName="email" id="exampleInputEmail1" placeholder="Entrez votre email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" ></ion-input>
+        <ion-icon name="mail-outline" color="primary" class="icon"></ion-icon>
+        <ion-input class="input" required clearInput type="email" formControlName="email" id="exampleInputEmail1" placeholder="Entrez votre email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" ></ion-input>
       </ion-item>
     <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
       <div *ngIf="f['email'].errors?.['required']">Email is required</div>
+      <div *ngIf="f['email'].errors?.['pattern']">Email is incorrect. Try again</div>
   </div>
     </div>
 
     <div class="form-group">
       <ion-item class="ion-margin-bottom">
-        <ion-label position="floating">Password</ion-label>
-        <ion-input  class="input" type="password" required clearInput formControlName="password"  id="exampleInputPassword1" placeholder="Entrez votre mot de passe" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"></ion-input>     
+        <ion-icon name="lock-closed-outline" color="primary" class="icon"></ion-icon>     
+        <ion-input  class="input" type="password" required clearInput formControlName="password"  id="exampleInputPassword1" placeholder="Entrez votre mot de passe" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"></ion-input>
       </ion-item>
     <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
       <div *ngIf="f['password'].errors?.['required']">Password is required
+      </div>
+      <div *ngIf="f['password'].errors?.['minLength']">Password is incorrect.Try again
       </div>
   </div>
     </div>
